@@ -1,13 +1,5 @@
+@Enett_1
 Feature: Enett webpage Test 1
-
-#Scenario: Enett login successfully
-#
-#Given user opens Enett login page
-#Then user enters userid
-#Then user enters password
-#And user clicks on signin button
-#And close the browser
-
 
 Scenario Outline: Enett webpage changes language successfully
 

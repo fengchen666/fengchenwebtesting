@@ -37,8 +37,8 @@ public class GetGoogleDefinition {
 
         }
 
-        @When("^user clicks the first AWS page$")
-        public void user_clicks_the_first_AWS_page() throws Throwable {
+        @When("^user clicks the AWS login page$")
+        public void user_clicks_the_AWS_login_page() throws Throwable {
         driver.findElement(By.linkText("Amazon Web Services (AWS) - Cloud Computing Services")).click();
         }
 
