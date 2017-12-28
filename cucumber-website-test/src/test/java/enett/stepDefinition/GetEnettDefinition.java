@@ -16,7 +16,7 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 public class GetEnettDefinition {
     
-	WebDriver driver = null; 
+	HtmlUnitDriver driver = null; 
 	
 	@Given("^user opens Enett main page$")
 	public void user_opens_Enett_main_page() throws Throwable {
@@ -29,16 +29,15 @@ public class GetEnettDefinition {
              // driver = new ChromeDriver(); 
               //driver = new FirefoxDriver();
               driver = new HtmlUnitDriver();
-	      driver.navigate().to("https://www.enett.com/"); 
+	      driver.setJavascriptEnabled(true);
+              driver.get("https://www.enett.com/");
         }
 	@When("^user changes language to \"([^\"]*)\"$")
 	public void user_changes_language_to(String language) throws Throwable {
 	
 		driver.findElement(By.id("LangButton")).click();
-		Thread.sleep(2000);
 		
 		driver.findElement(By.linkText(language)).click();
-		Thread.sleep(2000);
 	
         }
 
@@ -49,8 +48,23 @@ public class GetEnettDefinition {
 		
 		assertEquals(lang, language);
 		
-		driver.close(); 
+                String Title = driver.getTitle();
+
+                System.out.println("The title is " +Title);      
+	 	driver.close(); 
 		
 	}
 	
+        @When("^user clicks \"([^\"]*)\"$")
+        public void user_clicks(String arg1) throws Throwable {
+        }
+
+        @Then("^user gets the description of VANs$")
+        public void user_gets_the_description_of_VANs() throws Throwable {
+        }
+
+        @Then("^the video is played$")
+        public void the_video_is_played() throws Throwable {
+        }
+
 }

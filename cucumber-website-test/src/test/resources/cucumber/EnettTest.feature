@@ -14,7 +14,13 @@ Examples:
 | 日本語   | 日本語   |
 | Italiano| Italiano|
 
+Scenario: What are VANs?
 
+Given user opens Enett main page
+When user clicks "What are VANs"
+Then user gets the description of VANs
+When user clicks "Watch Video"
+Then the video is played
 
 
 
