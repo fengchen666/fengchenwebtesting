@@ -1,4 +1,4 @@
-package stepDefinition;
+package enett.stepDefinition;
 
 import static org.junit.Assert.assertEquals;
 
@@ -14,7 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
-public class EnettLoginTest_StepDefinition {
+public class GetEnettDefinition {
     
 	WebDriver driver = null; 
 	
