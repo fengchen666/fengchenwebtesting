@@ -1,6 +1,7 @@
 package google.stepDefinition;
 
 import static org.junit.Assert.assertEquals;
+import java.util.logging.*;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -24,6 +25,7 @@ public class GetGoogleDefinition {
         driver = new HtmlUnitDriver();
         driver.get("https://www.google.com");
         
+        java.util.logging.Logger.getLogger("com.gargoylesoftware.htmlunit").setLevel(Level.OFF); 
         } 
 
         @When("^user searchs \"([^\"]*)\"$")
