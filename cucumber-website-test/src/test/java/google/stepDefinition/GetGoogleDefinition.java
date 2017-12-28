@@ -39,7 +39,7 @@ public class GetGoogleDefinition {
 
         @When("^user clicks the first AWS page$")
         public void user_clicks_the_first_AWS_page() throws Throwable {
-        driver.findElement(By.linkText("Amazon Web Services Cloud - Accelerate Your Cloud Success")).click();
+        driver.findElement(By.linkText("Amazon Web Services (AWS) - Cloud Computing Services")).click();
         }
 
         @Then("^user jumps into proper AWS page$")
@@ -47,7 +47,8 @@ public class GetGoogleDefinition {
         String Title = driver.getTitle();
         // Print the title
         System.out.println("I am at " +Title);
-        assertEquals(Title, "AWS Free Tier");
+        assertEquals(Title, "Amazon Web Services (AWS) - Cloud Computing Services");
+                              
         driver.close();
 
         }

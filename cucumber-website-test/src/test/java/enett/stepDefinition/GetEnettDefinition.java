@@ -29,39 +29,26 @@ public class GetEnettDefinition {
              // driver = new ChromeDriver(); 
               //driver = new FirefoxDriver();
               driver = new HtmlUnitDriver();
-	      //driver.navigate().to("https://www.enett.com/"); 
-        
-        driver.get("https://www.google.com");
-        WebElement element = driver.findElement(By.id("lst-ib"));
-        element.sendKeys("aws");
-        element.submit();
-        //Click on Software Testing Material link
-        driver.findElement(By.linkText("Amazon Web Services Cloud - Accelerate Your Cloud Success")).click();
-        // Get the title of the site and store it in the variable Title
-        String Title = driver.getTitle();
-        // Print the title
-        System.out.println("I am at " +Title);
-	      
-	}
-
+	      driver.navigate().to("https://www.enett.com/"); 
+        }
 	@When("^user changes language to \"([^\"]*)\"$")
 	public void user_changes_language_to(String language) throws Throwable {
-	/*
+	
 		driver.findElement(By.id("LangButton")).click();
 		Thread.sleep(2000);
 		
 		driver.findElement(By.linkText(language)).click();
 		Thread.sleep(2000);
-	*/
+	
         }
 
 	@Then("^The page has been changed accordingly to the \"([^\"]*)\"$")
 	public void the_page_has_been_changed_accordingly_to_the(String language) throws Throwable {
-		/*
+		
 		String lang = driver.findElement(By.id("LangButton")).getText();
 		
 		assertEquals(lang, language);
-		*/
+		
 		driver.close(); 
 		
 	}
