@@ -1,6 +1,8 @@
 package enett.stepDefinition;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+import static org.hamcrest.CoreMatchers.containsString;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -57,10 +59,20 @@ public class GetEnettDefinition {
 	
         @When("^user clicks \"([^\"]*)\"$")
         public void user_clicks(String arg1) throws Throwable {
+              driver = new HtmlUnitDriver();
+              driver.setJavascriptEnabled(true);
+              driver.get("https://www.enett.com/");
+            
+              driver.findElement(By.linkText(arg1)).click();
         }
 
-        @Then("^user gets the description of VANs$")
-        public void user_gets_the_description_of_VANs() throws Throwable {
+        @Then("^user gets the description of VANs - \"([^\"]*)\"$")
+        public void user_gets_the_description_of_VANs(String arg1) throws Throwable {
+        
+              String VANText = driver.findElement(By.xpath("/html/body/div[1]/div/div/div[1]/div/h1")).getText();
+              System.out.println("VANText = " + VANText);
+
+              assertThat(VANText, containsString(arg1));
         }
 
         @Then("^the video is played$")
